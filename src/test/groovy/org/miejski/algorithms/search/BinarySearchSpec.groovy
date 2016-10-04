@@ -7,11 +7,18 @@ import spock.lang.Unroll
 class BinarySearchSpec extends Specification {
 
     def random = new Random()
+    List<Search<Integer>> searchAlgorithms
+
+    void setup() {
+        searchAlgorithms = [new BinarySearch(), new BinarySearchRectail()]
+    }
 
     @Unroll
     def "should find proper index of given value"() {
         expect:
-        new BinarySearch().find(data.toArray(new Integer[data.size()]), valueToFind) == expectedIndex
+        searchAlgorithms.each {
+            it.find(data.toArray(new Integer[data.size()]), valueToFind) == expectedIndex
+        }
 
         where:
         data                 | valueToFind | expectedIndex
@@ -29,6 +36,8 @@ class BinarySearchSpec extends Specification {
         def expected_index = random.nextInt(data.size())
 
         expect:
-        new BinarySearch().find(data.toArray(new Integer[data.size()]), data[expected_index]) == expected_index
+        searchAlgorithms.each {
+            it.find(data.toArray(new Integer[data.size()]), data[expected_index]) == expected_index
+        }
     }
 }
