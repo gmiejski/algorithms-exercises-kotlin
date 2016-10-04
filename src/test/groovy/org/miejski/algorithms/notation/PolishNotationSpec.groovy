@@ -39,5 +39,4 @@ class PolishNotationSpec extends Specification {
         "23421"      | 5
         "1"          | 1
     }
-
 }
