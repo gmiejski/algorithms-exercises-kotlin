@@ -1,6 +1,7 @@
 package org.miejski.algorithms.sort
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 
 class SortSpec extends Specification {
@@ -8,6 +9,7 @@ class SortSpec extends Specification {
 
     def random = new Random()
 
+    @Unroll
     def "should properly sort random data"() {
         given:
         def data = (1..ARRAY_SIZE).collect { random.nextInt() }
@@ -18,8 +20,10 @@ class SortSpec extends Specification {
         where:
         sortingAlgorithm    | _
         new SelectionSort() | _
+        new BubbleSort()    | _
     }
 
+    @Unroll
     def "should properly return already sorted data"() {
         def data = (1..ARRAY_SIZE).collect { random.nextInt() }
         def sortedData = data.sort()
@@ -30,9 +34,11 @@ class SortSpec extends Specification {
         where:
         sortingAlgorithm    | _
         new SelectionSort() | _
+        new BubbleSort()    | _
     }
 
-    def "should properly sort reversely sorted data"() {
+    @Unroll
+    def "should properly sort reversely sorted data:"() {
         def data = (1..ARRAY_SIZE).collect { random.nextInt() }
         def sortedData = data.sort().reverse()
 
@@ -42,5 +48,6 @@ class SortSpec extends Specification {
         where:
         sortingAlgorithm    | _
         new SelectionSort() | _
+        new BubbleSort()    | _
     }
 }
