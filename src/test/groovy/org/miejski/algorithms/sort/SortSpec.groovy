@@ -21,7 +21,8 @@ class SortSpec extends Specification {
         sortingAlgorithm    | _
         new SelectionSort() | _
         new BubbleSort()    | _
-    }
+        new InsertionSort() | _
+     }
 
     @Unroll
     def "should properly return already sorted data"() {
@@ -35,6 +36,7 @@ class SortSpec extends Specification {
         sortingAlgorithm    | _
         new SelectionSort() | _
         new BubbleSort()    | _
+        new InsertionSort() | _
     }
 
     @Unroll
@@ -49,5 +51,6 @@ class SortSpec extends Specification {
         sortingAlgorithm    | _
         new SelectionSort() | _
         new BubbleSort()    | _
+        new InsertionSort() | _
     }
 }
