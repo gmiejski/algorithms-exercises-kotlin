@@ -23,6 +23,7 @@ class SortSpec extends Specification {
         new BubbleSort()    | _
         new InsertionSort() | _
         new MergeSort()     | _
+        new QuickSort()     | _
     }
 
     @Unroll
@@ -39,6 +40,7 @@ class SortSpec extends Specification {
         new BubbleSort()    | _
         new InsertionSort() | _
         new MergeSort()     | _
+        new QuickSort()     | _
     }
 
     @Unroll
@@ -55,11 +57,12 @@ class SortSpec extends Specification {
         new BubbleSort()    | _
         new InsertionSort() | _
         new MergeSort()     | _
+        new QuickSort()     | _
     }
 
     def "testing test"() {
         def data = [38, 27, 43, 3, 9, 82, 10]
-        def sortingAlgorithm = new MergeSort()
+        def sortingAlgorithm = new QuickSort()
         expect:
         sortingAlgorithm.sort(data.toArray(new Integer[data.size()])).toList() == data.sort()
     }
