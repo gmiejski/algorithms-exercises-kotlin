@@ -22,7 +22,8 @@ class SortSpec extends Specification {
         new SelectionSort() | _
         new BubbleSort()    | _
         new InsertionSort() | _
-     }
+        new MergeSort()     | _
+    }
 
     @Unroll
     def "should properly return already sorted data"() {
@@ -37,6 +38,7 @@ class SortSpec extends Specification {
         new SelectionSort() | _
         new BubbleSort()    | _
         new InsertionSort() | _
+        new MergeSort()     | _
     }
 
     @Unroll
@@ -52,5 +54,13 @@ class SortSpec extends Specification {
         new SelectionSort() | _
         new BubbleSort()    | _
         new InsertionSort() | _
+        new MergeSort()     | _
+    }
+
+    def "testing test"() {
+        def data = [38, 27, 43, 3, 9, 82, 10]
+        def sortingAlgorithm = new MergeSort()
+        expect:
+        sortingAlgorithm.sort(data.toArray(new Integer[data.size()])).toList() == data.sort()
     }
 }
