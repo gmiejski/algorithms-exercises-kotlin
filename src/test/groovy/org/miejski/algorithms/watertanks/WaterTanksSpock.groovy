@@ -18,4 +18,4 @@ class WaterTanksSpock extends Specification {
         [1, 1, 1, 3, 2, 5, 2, 2, 1, 1]      | 1
         [11, 1, 1, 1, 1, 9, 1, 1, 1, 1, 11] | 82
     }
-}4
+}
