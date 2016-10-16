@@ -3,7 +3,7 @@ package org.miejski.algorithms.sort
 import java.math.BigInteger
 import java.util.*
 
-class RadixSort : Sort {
+class BucketSort : Sort {
     override fun sort(data: Array<Int>): Array<Int> {
         val bigInts = data.map { BigInteger(it.toString()) }
         val min = bigInts.min()!!

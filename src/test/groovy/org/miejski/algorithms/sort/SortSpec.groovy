@@ -25,7 +25,7 @@ class SortSpec extends Specification {
         new MergeSort()     | _
         new QuickSort()     | _
         new HeapSort()      | _
-        new RadixSort()     | _
+        new BucketSort()    | _
     }
 
     @Unroll
@@ -44,7 +44,7 @@ class SortSpec extends Specification {
         new MergeSort()     | _
         new QuickSort()     | _
         new HeapSort()      | _
-        new RadixSort()     | _
+        new BucketSort()    | _
     }
 
     @Unroll
@@ -63,13 +63,13 @@ class SortSpec extends Specification {
         new MergeSort()     | _
         new QuickSort()     | _
         new HeapSort()      | _
-        new RadixSort()     | _
+        new BucketSort()    | _
     }
 
     def "testing test"() {
         def data = [-38, -27, 43, 3, 9, 82, 10]
 //        def data = [78,17,39,26,72,94,21,12,23,62]
-        def sortingAlgorithm = new RadixSort()
+        def sortingAlgorithm = new BucketSort()
         expect:
         sortingAlgorithm.sort(data.toArray(new Integer[data.size()])).toList() == data.sort()
     }
