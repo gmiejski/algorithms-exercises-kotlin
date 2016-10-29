@@ -4,14 +4,12 @@ import org.miejski.algorithms.algo_plus.week_1.quadtree.nodes.*
 
 class QuadNodeBuilder {
     companion object {
-        fun black(): BlackNode {
-            val blackNode = BlackNode()
-            return BlackNode()
+        fun black(): ColoredNode {
+            return  ColoredNode(Color.BLACK)
         }
 
-        fun white(): WhiteNode {
-            val whiteNode = WhiteNode()
-            return whiteNode
+        fun white(): ColoredNode {
+            return ColoredNode(Color.WHITE)
         }
 
         fun mixed(init: MixedNode.() -> Unit): MixedNode {

@@ -11,14 +11,14 @@ class MixedNode() : QuadNode {
         elements.forEach { children.add(it) }
     }
 
-    fun black(): BlackNode {
-        val blackNode = BlackNode()
+    fun black(): ColoredNode {
+        val blackNode = ColoredNode(Color.BLACK)
         children.add(blackNode)
         return blackNode
     }
 
-    fun white(): WhiteNode {
-        val whiteNode = WhiteNode()
+    fun white(): ColoredNode {
+        val whiteNode = ColoredNode(Color.WHITE)
         children.add(whiteNode)
         return whiteNode
     }
