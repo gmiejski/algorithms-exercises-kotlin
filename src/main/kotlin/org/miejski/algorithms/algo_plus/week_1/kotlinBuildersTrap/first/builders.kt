@@ -1,6 +1,6 @@
 package org.miejski.algorithms.algo_plus.week_1.kotlinBuildersTrap.first
 
-import org.miejski.algorithms.algo_plus.week_1.Color
+import org.miejski.algorithms.algo_plus.week_1.quadtree.nodes.Color
 import java.util.*
 
 interface SomeNode {
