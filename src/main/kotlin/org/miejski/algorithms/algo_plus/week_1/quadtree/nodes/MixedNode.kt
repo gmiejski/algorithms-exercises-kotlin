@@ -6,7 +6,6 @@ import java.util.*
 class MixedNode() : QuadNode {
     override val children: MaxSizeArrayList<QuadNode> = MaxSizeArrayList(mutableListOf(), 4)
     override val color: Color = Color.MIXED
-    override val id = UUID.randomUUID().toString()
 
     constructor(elements: List<QuadNode>) : this() {
         elements.forEach { children.add(it) }
@@ -29,5 +28,20 @@ class MixedNode() : QuadNode {
         mixedNode.init()
         children.add(mixedNode)
         return mixedNode
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other?.javaClass != javaClass) return false
+
+        other as MixedNode
+        return Objects.equals(color, other.color) && children.zip(other.children).map { it.first.equals(it.second) }
+            .foldRight(true, { t, r -> t })
+    }
+
+    override fun hashCode(): Int {
+        var result = children.hashCode()
+        result = 31 * result + color.hashCode()
+        return result
     }
 }
